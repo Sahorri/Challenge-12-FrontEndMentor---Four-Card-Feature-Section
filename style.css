@@ -1,0 +1,173 @@
+/** CSS RESETS **/
+
+/* 1. Reset margin/padding + Border-Box Model */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Améliorer le rendu du texte */
+
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Améliorer les média par défaut car (img = par défaut inline) => Responsive */
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 4. Supprimer le style de typo de base */
+  
+input, button, textarea, select {
+    font: inherit;
+}
+  
+/* 5. Eviter l'overflow des textes même avec des petites viewport */
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/** GENERAL CSS **/
+
+html {
+    font-size: 62.5%;  /* 1rem = 10px */
+}
+
+body {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 2rem;
+}
+
+main {
+    min-width: 300px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+    font-weight: 200;
+    color: hsl(234, 12%, 34%) 
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+}
+
+.center {
+    text-align:center;
+}
+
+.fs12 {
+    font-size: 1.2rem;
+}
+
+.fs13 {
+    font-size: 1.3rem;
+}
+
+/** CSS CARD **/
+
+.card {
+    padding:2rem 3rem;
+    margin: 2rem 0;
+    border-radius:5px;
+    box-shadow: 1px 1px 10px hsl(0, 5%, 84.3%);
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    align-self: end;
+    margin-top: 2rem;
+}
+
+.card1 {
+    border-top: solid 3px hsl(180, 62%, 55%);
+}
+
+.card2 {
+    border-top: solid 3px hsl(0, 78%, 62%);
+}
+
+.card3 {
+    border-top: solid 3px hsl(34, 97%, 64%);
+}
+
+.card4 {
+    border-top: solid 3px hsl(212, 86%, 64%);
+}
+
+/** MEDIA QUERIES **/
+
+@media screen and (min-width:900px) {
+
+    .flex-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 0px;
+    }
+        
+    .intro { 
+        grid-area: 1 / 1 / 2 / 4; 
+    }
+    
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .intro-p {
+        font-size: 1.7rem;
+        padding-top: 2rem;
+    }
+
+    .card1 { 
+        grid-area: 2 / 1 / 4 / 2; 
+        max-height: 200px;
+        max-width: 320px;
+        align-self: center
+
+    }
+    .card2 { 
+        grid-area: 2 / 2 / 3 / 3; 
+        max-width: 320px;
+    }
+    .card3 { 
+        grid-area: 3 / 2 / 4 / 3; 
+        max-width: 320px;
+    }
+    .card4 { 
+        grid-area: 2 / 3 / 4 / 4; 
+        max-height: 200px;
+        max-width: 320px;
+        align-self: center
+    } 
+
+}
+
